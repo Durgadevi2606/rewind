@@ -1,0 +1,24 @@
+@import './styles/tokens.css';
+@import './styles/typography.css';
+@import './styles/game.css';
+@import './styles/components.css';
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-app);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

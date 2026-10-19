@@ -1,0 +1,276 @@
+/* ═══════════════════════════════════════════════════════════════
+   CANDY CRUSH SAGA — Game Board, Tiles & Entities CSS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Outer container centering the board */
+.cc-board-outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 6px auto;
+  touch-action: none;
+}
+
+/* The Iconic Candy Crush Chocolate Board Frame */
+.cc-board-frame {
+  position: relative;
+  padding: 14px;
+  background: linear-gradient(180deg, #4d230f 0%, #301407 100%);
+  border: 4px solid #ffcc00;
+  border-radius: 26px;
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.45),
+    inset 0 4px 6px rgba(255, 255, 255, 0.3),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(255, 200, 0, 0.25);
+  overflow: hidden;
+}
+
+/* Candy Board Gloss Top Highlight */
+.cc-board-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, transparent 100%);
+  border-radius: 22px 22px 0 0;
+  pointer-events: none;
+}
+
+/* Grid Wrapper */
+.cc-grid {
+  display: grid;
+  position: relative;
+  background: rgba(30, 12, 5, 0.6);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Individual Grid Tile */
+.cc-tile {
+  width: var(--tile-size);
+  height: var(--tile-size);
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Candy Crush Checkerboard Floor Tiles */
+.cc-tile-checker-a {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.35);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+}
+
+.cc-tile-checker-b {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CHOCOLATE BAR WALL TILES (#)
+   Belgian chocolate blocks with 4 beveled bite-sized squares!
+   ═══════════════════════════════════════════════════════════════ */
+
+.cc-tile-chocolate-wall {
+  background: linear-gradient(145deg, #5c2b12 0%, #421c08 50%, #2b1104 100%);
+  border: 1px solid #73391b;
+  position: relative;
+  box-shadow:
+    inset 0 2px 2px rgba(255, 255, 255, 0.25),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.7),
+    0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.cc-choco-segment {
+  width: 78%;
+  height: 78%;
+  background: linear-gradient(135deg, #6b3316 0%, #4a210b 100%);
+  border-radius: 4px;
+  box-shadow:
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.35),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.6),
+    0 1px 3px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cc-choco-bevel {
+  width: 50%;
+  height: 50%;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CANDY ENTITIES & COLLECTIBLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Collectible Candies */
+.entity-fragment {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: candyFloatBob 2.2s ease-in-out infinite alternate;
+  z-index: 5;
+}
+
+@keyframes candyFloatBob {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.04); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Pushable Wrapped Candy Block */
+.entity-pushable {
+  width: 96%;
+  height: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform var(--transition-tactile);
+}
+
+/* Pressure Waffle Switch */
+.entity-switch {
+  width: 82%;
+  height: 82%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 150ms ease;
+  z-index: 4;
+}
+
+.entity-switch.active {
+  transform: scale(0.92);
+  filter: drop-shadow(0 0 8px #48d626);
+}
+
+/* Peppermint Gate */
+.entity-gate {
+  width: 88%;
+  height: 88%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 8;
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.entity-gate.open {
+  opacity: 0.35;
+  transform: scale(0.85);
+}
+
+/* Exit Portal: Rainbow Swirl Lollipop */
+.entity-portal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+}
+
+.spinning-lollipop {
+  transform-origin: 24px 20px;
+  animation: spinLollipop 5s linear infinite;
+}
+
+@keyframes spinLollipop {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.pulse-aura {
+  animation: pulseAura 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseAura {
+  0% { transform: scale(0.92); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 0.95; }
+}
+
+/* Sugar Dust Trace */
+.sugar-dust-trace {
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  pointer-events: none;
+  animation: sugarGlint 2s ease-in-out infinite alternate;
+  z-index: 3;
+}
+
+@keyframes sugarGlint {
+  0% { opacity: 0.4; transform: scale(0.9); }
+  100% { opacity: 0.85; transform: scale(1.08); }
+}
+
+/* Rewind Shimmer Flash over board */
+.cc-rewind-sugar-flash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 230, 100, 0.45) 0%, rgba(255, 80, 150, 0.3) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 25;
+  animation: rewindFlashAnim 300ms ease-out forwards;
+}
+
+@keyframes rewindFlashAnim {
+  0% { opacity: 0; transform: scale(0.95); }
+  40% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+/* Player Mascot Character */
+.character-entity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--tile-size);
+  height: var(--tile-size);
+  z-index: 15;
+  transition: transform var(--transition-tactile);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cc-mascot {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.cc-mascot.is-moving {
+  animation: mascotStepBounce 180ms ease-in-out;
+}
+
+@keyframes mascotStepBounce {
+  0% { transform: scale(1, 1); }
+  40% { transform: scale(1.1, 0.9) translateY(2px); }
+  75% { transform: scale(0.92, 1.1) translateY(-4px); }
+  100% { transform: scale(1, 1) translateY(0); }
+}
+
+@keyframes candyPulseHighlight {
+  0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5), inset 0 0 6px rgba(255, 215, 0, 0.3); }
+  100% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.9), inset 0 0 14px rgba(255, 215, 0, 0.6); }
+}

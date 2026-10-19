@@ -1,0 +1,103 @@
+/* REWIND — Cheerful Casual-Puzzle Typography */
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-app);
+  background-color: var(--bg-app-solid);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  user-select: none;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+/* Hero Title Wordmark — Big, bouncy, playful */
+.title-wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #FF6B9D, #B8A9E8, #5CD9D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 3px 6px rgba(255, 107, 157, 0.3));
+  line-height: 1.1;
+}
+
+/* Subtitle Badge */
+.title-subtitle {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-lavender-deep);
+  opacity: 0.95;
+}
+
+/* Large Display Heading */
+.heading-lg {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+/* Medium Heading */
+.heading-md {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* Small Heading */
+.heading-sm {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-pink-bright);
+}
+
+/* Labels */
+.text-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Numeric Display */
+.text-value {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+
+.text-code {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
